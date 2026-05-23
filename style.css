@@ -86,3 +86,28 @@ body > div:nth-of-type(2) {
   width: calc(100% - 250px);
   display: block;
 }
+
+.game-card {
+  background: #1e4fa3; /* Blue to match your site */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 180px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  background: #2f6be0;
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.6);
+}
+
+.game-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
