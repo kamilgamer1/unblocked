@@ -47,7 +47,8 @@ h1 {
   font-weight: 600;
 }
 
-.home-icon {
-  font-size: 70px;
-  line-height: 90px;
+.game-icon.home-icon { 
+    font-size: 70px;
+    line-height: 90px;
 }
+
