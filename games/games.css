@@ -46,3 +46,8 @@ h1 {
   font-size: 16px;
   font-weight: 600;
 }
+
+.home-icon {
+  font-size: 70px;
+  line-height: 90px;
+}
