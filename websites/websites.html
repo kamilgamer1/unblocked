@@ -1,37 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/blank-repo-start-from-scratch/style.css">
     <title>Websites</title>
-  </head>
 
-  <body>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
 
-    <!-- SIDEBAR (same as index.html) -->
+        /* SIDEBAR */
+        #sidebar {
+            width: 200px;
+            height: 100vh;
+            background: #0d47a1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            margin: 10px 0;
+        }
+
+        #sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        #sidebar ul li a.active {
+            background: #08306b;
+        }
+
+        /* MAIN CONTENT */
+        #websites {
+            margin-left: 200px;
+            padding: 30px;
+        }
+
+        /* BUTTON LIST */
+        .website-buttons {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .website-btn {
+            display: block;
+            width: 100%;
+            background: #0d47a1;
+            color: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .website-btn:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
     <div id="sidebar">
-      <ul>
-        <li><a href="/blank-repo-start-from-scratch/home.html">Home</a></li>
-        <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
-        <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
-        <li><a href="/blank-repo-start-from-scratch/websites/websites.html" class="active">Websites</a></li>
-        <li><a href="/blank-repo-start-from-scratch/about-us/websites.html">About Us</a></li>
-      </ul>
+        <ul>
+            <li><a href="/blank-repo-start-from-scratch/home.html">Home</a></li>
+            <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
+            <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
+            <li><a class="active" href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
+            <li><a href="/blank-repo-start-from-scratch/about-us/websites.html">About Us</a></li>
+        </ul>
     </div>
 
-    <!-- MAIN CONTENT AREA (you forgot this wrapper) -->
-    <div id="Home">
+    <!-- MAIN CONTENT (renamed to websites) -->
+    <div id="websites">
 
-      <h1>Websites</h1>
+        <h1>Websites</h1>
 
-      <div class="website-buttons">
-        <a href="https://example.com" id="example" class="website-btn">Example Website</a>
-        <a href="https://google.com" id="google" class="website-btn">Google</a>
-        <a href="https://youtube.com" id="youtube" class="website-btn">YouTube</a>
-      </div>
+        <div class="website-buttons">
+
+            <button class="website-btn" onclick="window.location.href='https://example.com'">
+                Example Website
+            </button>
+
+            <button class="website-btn" onclick="window.location.href='https://google.com'">
+                Google
+            </button>
+
+            <button class="website-btn" onclick="window.location.href='https://youtube.com'">
+                YouTube
+            </button>
+
+        </div>
 
     </div>
 
-  </body>
+</body>
 </html>
