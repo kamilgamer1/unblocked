@@ -18,3 +18,24 @@
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
+.website-buttons {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.website-btn {
+    display: block;
+    width: 100%;
+    background: #0d47a1;
+    color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
