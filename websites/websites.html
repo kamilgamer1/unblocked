@@ -6,74 +6,87 @@
     <title>Websites</title>
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: Arial, sans-serif;
-            background: #f0f0f0;
+            background-color: #f8f9fa;
         }
 
         /* SIDEBAR */
         #sidebar {
-            width: 200px;
-            height: 100vh;
-            background: #0d47a1;
+            width: 250px;
             position: fixed;
             top: 0;
             left: 0;
-            padding-top: 20px;
+            height: 100vh;
+            background-color: #2c3e50;
+            padding: 20px;
         }
 
         #sidebar ul {
-            list-style: none;
-            padding: 0;
+            list-style-type: none;
         }
 
-        #sidebar ul li {
-            margin: 10px 0;
+        #sidebar li {
+            margin-bottom: 15px;
         }
 
-        #sidebar ul li a {
-            color: white;
+        #sidebar a {
+            color: #ecf0f1;
             text-decoration: none;
             font-size: 18px;
-            padding: 10px 20px;
             display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
         }
 
-        #sidebar ul li a.active {
-            background: #08306b;
+        #sidebar a:hover,
+        #sidebar a.active {
+            background-color: #34495e;
+            border-left: 4px solid #3498db;
         }
 
         /* MAIN CONTENT */
         #websites {
-            margin-left: 200px;
-            padding: 30px;
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
         }
 
-        /* BUTTON LIST */
-        .website-buttons {
+        /* SEARCH BAR */
+        #searchBar {
             width: 100%;
-            box-sizing: border-box;
+            padding: 12px 15px;
+            font-size: 18px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
         }
 
+        /* WEBSITE BUTTONS */
         .website-btn {
             display: block;
             width: 100%;
-            background: #0d47a1;
+            background-color: #3498db;
             color: white;
-            padding: 25px;
-            margin: 15px 0;
-            border-radius: 12px;
-            font-size: 22px;
-            font-weight: bold;
             border: none;
+            padding: 20px;
+            margin: 15px 0;
+            font-size: 18px;
+            border-radius: 5px;
             cursor: pointer;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-align: left;
+            transition: background 0.2s;
         }
 
         .website-btn:hover {
-            background: #1565c0;
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -83,36 +96,49 @@
     <!-- SIDEBAR -->
     <div id="sidebar">
         <ul>
-            <li><a href="/blank-repo-start-from-scratch/index.html">Home</a></li>
+            <li><a href="/blank-repo-start-from-scratch/home.html">Home</a></li>
             <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
             <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
             <li><a class="active" href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
-            <li><a href="/blank-repo-start-from-scratch/about-us/about-us.html">About Us</a></li>
+            <li><a href="/blank-repo-start-from-scratch/about-us/websites.html">About Us</a></li>
         </ul>
     </div>
 
-    <!-- MAIN CONTENT (renamed to websites) -->
+    <!-- MAIN CONTENT -->
     <div id="websites">
 
         <h1>Websites</h1>
 
-        <div class="website-buttons">
+        <!-- SEARCH BAR -->
+        <input type="text" id="searchBar" placeholder="Search websites..." onkeyup="filterButtons()">
 
-            <button class="website-btn" onclick="window.location.href='https://example.com'">
-                Example Website
-            </button>
+        <!-- BUTTON LIST -->
+        <button class="website-btn" onclick="window.location.href='https://example.com'">
+            Example Website
+        </button>
 
-            <button class="website-btn" onclick="window.location.href='https://google.com'">
-                Google
-            </button>
+        <button class="website-btn" onclick="window.location.href='https://google.com'">
+            Google
+        </button>
 
-            <button class="website-btn" onclick="window.location.href='https://youtube.com'">
-                YouTube
-            </button>
-
-        </div>
+        <button class="website-btn" onclick="window.location.href='https://youtube.com'">
+            YouTube
+        </button>
 
     </div>
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+        function filterButtons() {
+            const input = document.getElementById("searchBar").value.toLowerCase();
+            const buttons = document.querySelectorAll(".website-btn");
+
+            buttons.forEach(btn => {
+                const text = btn.textContent.toLowerCase();
+                btn.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
 
 </body>
 </html>
