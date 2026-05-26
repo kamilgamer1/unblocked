@@ -47,3 +47,47 @@ h1 {
   font-weight: 600;
 }
 
+/* DARK MODE */
+body.dark {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.dark #sidebar {
+    background-color: #111;
+}
+
+body.dark button,
+body.dark .website-btn {
+    background-color: #555;
+}
+
+/* SIDEBAR ANIMATION */
+#sidebar {
+    transition: transform 0.3s ease;
+}
+
+#sidebar.closed {
+    transform: translateX(-260px);
+}
+
+/* TOGGLE BUTTONS */
+#darkToggle, #menuToggle {
+    position: fixed;
+    top: 15px;
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#darkToggle {
+    right: 15px;
+}
+
+#menuToggle {
+    left: 15px;
+}
