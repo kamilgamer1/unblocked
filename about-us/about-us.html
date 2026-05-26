@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* SIDEBAR */
+        #sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: #2c3e50;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar.closed {
+            transform: translateX(-260px);
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+        }
+
+        #sidebar li {
+            margin-bottom: 15px;
+        }
+
+        #sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        #sidebar a:hover,
+        #sidebar a.active {
+            background-color: #34495e;
+            border-left: 4px solid #3498db;
+        }
+
+        /* MAIN CONTENT */
+        #about-us {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+
+        h1 a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        h1 a:hover {
+            text-decoration: underline;
+        }
+
+        /* TOGGLE BUTTONS */
+        #menuToggle, #darkToggle {
+            position: fixed;
+            top: 15px;
+            padding: 10px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #menuToggle {
+            left: 15px;
+        }
+
+        #darkToggle {
+            right: 15px;
+        }
+
+        /* DARK MODE */
+        body.dark {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        body.dark #sidebar {
+            background-color: #111;
+        }
+
+        body.dark h1 a {
+            color: #4aa3ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOGGLE BUTTONS -->
+    <button id="menuToggle" onclick="toggleSidebar()">☰</button>
+    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <ul>
+            <li><a href="/blank-repo-start-from-scratch/home.html">Home</a></li>
+            <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
+            <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
+            <li><a href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
+            <li><a class="active" href="/blank-repo-start-from-scratch/about-us/about-us.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="about-us">
+
+        <h1>
+            <a href="/blank-repo-start-from-scratch/about-us/advertise.html">
+                Advertise here!
+            </a>
+        </h1>
+
+    </div>
+
+    <!-- GLOBAL JAVASCRIPT -->
+    <script>
+        // ---------------- DARK MODE ----------------
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark");
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode",
+                document.body.classList.contains("dark") ? "enabled" : "disabled"
+            );
+        }
+
+        // ---------------- SIDEBAR TOGGLE ----------------
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("closed");
+            localStorage.setItem("sidebarClosed",
+                sidebar.classList.contains("closed")
+            );
+        }
+
+        // Load saved sidebar state
+        window.onload = () => {
+            if (localStorage.getItem("sidebarClosed") === "true") {
+                document.getElementById("sidebar").classList.add("closed");
+            }
+        };
+    </script>
+
+</body>
+</html>
