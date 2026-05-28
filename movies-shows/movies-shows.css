@@ -20,7 +20,7 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* SWITCH BUTTON (top-right) */
+/* SWITCH BUTTON */
 .switch-button {
     position: absolute;
     top: 20px;
