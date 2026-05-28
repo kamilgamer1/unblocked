@@ -11,41 +11,38 @@
 
 <body>
 <style>
-    .modal-backdrop {
+/* MODAL BACKDROP */
+.modal-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     display: none;
     z-index: 900;
 }
 
+/* MODAL BOX */
 .modal-box {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #1e4fa3; /* MATCHES YOUR BLUE THEME */
     padding: 25px;
     width: 350px;
     border-radius: 10px;
     display: none;
     z-index: 1000;
+    color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-
+/* BUTTONS */
 .modal-btn {
     padding: 10px 20px;
-    background: #3498db;
+    background: #0d3c85; /* darker blue */
     color: white;
     border: none;
     border-radius: 6px;
@@ -62,10 +59,9 @@
 
 /* DARK MODE SUPPORT */
 body.dark .modal-box {
-    background: #222;
+    background: #0d3c85;
     color: white;
 }
-
 </style>
     <!-- MODAL BACKDROP -->
 <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
