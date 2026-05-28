@@ -178,6 +178,37 @@ function closeModal() {
     document.getElementById("modalBox").style.display = "none";
 }
 </script>
+<!-- modal functions -->
+<script>
+function openModal(title, message, okAction = null) {
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalMessage").textContent = message;
+
+    document.getElementById("modalBackdrop").style.display = "block";
+    document.getElementById("modalBox").style.display = "block";
+
+    const okBtn = document.getElementById("okButton");
+    okBtn.onclick = () => {
+        closeModal();
+        if (okAction) okAction();
+    };
+}
+
+function closeModal() {
+    document.getElementById("modalBackdrop").style.display = "none";
+    document.getElementById("modalBox").style.display = "none";
+}
+</script>
+
+<!-- show modal on page load -->
+<script>
+window.addEventListener("load", () => {
+    openModal(
+        "!!NOTICE!!",
+        "I do not claim to own any of these movies, and these are NOT PIRATED. *use at your own risk*"
+    );
+});
+</script>
 
 </body>
 </html>
