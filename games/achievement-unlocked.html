@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Game Player</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #flash-container {
+            width: 800px;  /* Change to your game's width */
+            height: 600px; /* Change to your game's height */
+        }
+    </style>
+    <!-- Loads Ruffle from the unblocked jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@0.2.0/ruffle.js"></script>
+</head>
+<body>
+
+    <div id="flash-container"></div>
+
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("flash-container");
+            container.appendChild(player);
+            
+            // Replace "game.swf" with your actual SWF filename
+            player.load({
+                url: "acievement-unlocked.swf",
+                allowScriptAccess: true
+            });
+        });
+    </script>
+
+</body>
+</html>
