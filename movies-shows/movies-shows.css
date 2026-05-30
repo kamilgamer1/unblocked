@@ -11,7 +11,7 @@ body {
     display: inline-block;
     margin: 20px;
     padding: 12px 20px;
-    background: #1e4fa3;
+    background: #2f6be0;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -25,7 +25,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #1e4fa3;
+    background: #2f6be0;
     color: white;
     padding: 10px 18px;
     border-radius: 10px;
@@ -61,7 +61,7 @@ body {
 .movie-card {
     width: 200px;
     height: 250px;
-    background: #1e4fa3;
+    background: #2f6be0;
     border-radius: 12px;
     display: flex;
     justify-content: center;
