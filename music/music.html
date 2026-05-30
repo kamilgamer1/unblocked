@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+
+    <link rel="stylesheet" href="/blank-repo-start-from-scratch/music/music.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <ul>
+            <li><a href="/blank-repo-start-from-scratch/home.html">Home</a></li>
+            <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
+            <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
+            <li><a href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
+            <li><a class="active" href="/blank-repo-start-from-scratch/music/music.html">Music</a></li>
+            <li><a href="/blank-repo-start-from-scratch/about-us/about-us.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="music">
+
+        <h1>Music</h1>
+
+        <!-- SEARCH BAR -->
+        <input type="text" id="searchBar" placeholder="Search music..." onkeyup="filterButtons()">
+
+        <!-- MUSIC BUTTONS -->
+        <button class="music-btn" onclick="window.location.href='https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P'">
+            Blinding Lights – The Weeknd
+        </button>
+
+        <button class="music-btn" onclick="window.location.href='https://open.spotify.com/track/4Oun2ylbjFKMPTiaSbbCih'">
+            Sunflower – Post Malone
+        </button>
+
+        <button class="music-btn" onclick="window.location.href='https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m'">
+            Bad Guy – Billie Eilish
+        </button>
+
+        <button class="music-btn" onclick="window.location.href='https://open.spotify.com/track/3e9HZxeyfWwjeyPAMmWSSQ'">
+            Heat Waves – Glass Animals
+        </button>
+
+        <button class="music-btn" onclick="window.location.href='https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b'">
+            Save Your Tears – The Weeknd
+        </button>
+
+    </div>
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+        function filterButtons() {
+            const input = document.getElementById("searchBar").value.toLowerCase();
+            const buttons = document.querySelectorAll(".music-btn");
+
+            buttons.forEach(btn => {
+                const text = btn.textContent.toLowerCase();
+                btn.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>
