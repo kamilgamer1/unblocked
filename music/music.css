@@ -1,0 +1,87 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* SIDEBAR */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #2c3e50;
+    padding: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+}
+
+#sidebar li {
+    margin-bottom: 15px;
+}
+
+#sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#sidebar a:hover,
+#sidebar a.active {
+    background-color: #34495e;
+    border-left: 4px solid #3498db;
+}
+
+/* MAIN CONTENT */
+#music {
+    margin-left: 250px;
+    padding: 40px;
+    width: calc(100% - 250px);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* SEARCH BAR */
+#searchBar {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* MUSIC BUTTONS */
+.music-btn {
+    display: block;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 20px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.music-btn:hover {
+    background-color: #2980b9;
+}
