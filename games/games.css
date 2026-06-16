@@ -9,6 +9,53 @@ h1 {
   margin-bottom: 30px;
 }
 
+/* SIDEBAR */
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #2c3e50;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+#sidebar.closed {
+  transform: translateX(-260px);
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+
+#sidebar li {
+  margin-bottom: 15px;
+}
+
+#sidebar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#sidebar a:hover,
+#sidebar a.active {
+  background-color: #34495e;
+  border-left: 4px solid #3498db;
+}
+
+/* MAIN CONTENT */
+#games-content {
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
+}
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -60,15 +107,6 @@ body.dark #sidebar {
 body.dark button,
 body.dark .website-btn {
     background-color: #555;
-}
-
-/* SIDEBAR ANIMATION */
-#sidebar {
-    transition: transform 0.3s ease;
-}
-
-#sidebar.closed {
-    transform: translateX(-260px);
 }
 
 /* TOGGLE BUTTONS */
