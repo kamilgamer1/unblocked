@@ -6,6 +6,85 @@ body {
     color: white;
 }
 
+/* SIDEBAR */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #1a1a1a;
+    padding: 20px 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 800;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+    border-left: 4px solid transparent;
+}
+
+#sidebar a:hover {
+    background: #2a2a2a;
+}
+
+#sidebar a.active {
+    background: #3498db;
+    border-left-color: #3498db;
+}
+
+#sidebar.closed {
+    transform: translateX(-250px);
+}
+
+/* TOGGLE BUTTONS */
+#menuToggle, #darkToggle {
+    position: fixed;
+    top: 20px;
+    z-index: 850;
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#menuToggle {
+    left: 20px;
+}
+
+#darkToggle {
+    right: 20px;
+}
+
+/* MAIN CONTENT */
+#movies-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+#sidebar.closed ~ #movies-content {
+    margin-left: 0;
+}
+
 /* HOME BUTTON */
 .home-button {
     display: inline-block;
@@ -79,4 +158,17 @@ body {
 .movie-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* DARK MODE */
+body.dark {
+    background: #111;
+}
+
+body.dark #sidebar {
+    background: #0a0a0a;
+}
+
+body.dark #sidebar a:hover {
+    background: #1a1a1a;
 }
