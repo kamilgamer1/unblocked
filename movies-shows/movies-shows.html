@@ -10,60 +10,6 @@
 </head>
 
 <body>
-<style>
-/* MODAL BACKDROP */
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: none;
-    z-index: 900;
-}
-
-/* MODAL BOX */
-.modal-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #3498db; /* MATCHES YOUR BLUE THEME */
-    padding: 25px;
-    width: 350px;
-    border-radius: 10px;
-    display: none;
-    z-index: 1000;
-    color: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-/* BUTTONS */
-.modal-btn {
-    padding: 10px 20px;
-    background: #3498db; /* darker blue */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.ok-btn {
-    background: #2ecc71;
-}
-
-.ok-btn:hover {
-    background: #27ae60;
-}
-
-/* DARK MODE SUPPORT */
-body.dark .modal-box {
-    background: #0d3c85;
-    color: white;
-}
-</style>
-
     <!-- TOGGLE BUTTONS -->
     <button id="menuToggle" onclick="toggleSidebar()">☰</button>
     <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
@@ -96,21 +42,19 @@ body.dark .modal-box {
 
     <!-- MAIN CONTENT -->
     <div id="movies-content">
-        <!-- HOME BUTTON -->
-        <a href="../index.html" class="home-button">🏠 Home</a>
+        <h1>Movies & Shows</h1>
 
         <!-- SWITCH BUTTON -->
-        <a class="switch-button" id="switchBtn" onclick="toggleSections()">Shows</a>
+        <button class="switch-button" id="switchBtn" onclick="toggleSections()">Shows</button>
 
         <!-- SEARCH BAR -->
         <input type="text" id="searchBar" placeholder="Search..." onkeyup="filterCards()">
 
         <!-- MOVIES SECTION -->
         <div id="movies-section">
-            <h1 style="text-align:center;">Movies</h1>
+            <h2>Movies</h2>
 
             <div class="movies-container">
-
                 <a class="movie-card" href="https://drive.google.com/file/d/1_qJqk2Ss1f45puz3xGQcdD1NxM3ipupj/view">Ant-Man</a>
                 <a class="movie-card" href="https://loadedfiles.org/c9755193327a6e42?pt=SHV5cGlPUXhYRXpjUHplSUhOYjF0M0ZQY210aWRYRktaVEp5UzBodlptNDNSa0ZvWjJjOVBRPT0%3D">The Amazing Spider-Man 2</a>
                 <a class="movie-card" href="https://drive.google.com/file/d/1_g_fq1MEbqXuapY_dxXSdohAx8zmxwOX/view">Batman The Dark Knight</a>
@@ -127,22 +71,17 @@ body.dark .modal-box {
                 <a class="movie-card" href="https://drive.google.com/file/d/1Mva-frIx-PjwLfoV08BxlwQ44glMzBnZ/view">65</a>
                 <a class="movie-card" href="https://drive.google.com/file/d/1lKwqLzxgLyJi0BhN9Lc8HdHMM7LMVb5V/view">Men In Black</a>
                 <a class="movie-card" href="https://drive.google.com/file/d/1YPdexiO1cHulGguqGvHKq0Grsnpdlbs1/view">Top Gun</a>
-                <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
-                <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
-
             </div>
         </div>
 
         <!-- SHOWS SECTION -->
         <div id="shows-section" style="display:none;">
-            <h1 style="text-align:center;">Shows</h1>
+            <h2>Shows</h2>
 
             <div class="movies-container">
-
                 <a class="movie-card" href="https://www.netflix.com/title/80057281">Stranger Things</a>
                 <a class="movie-card" href="https://www.imdb.com/title/tt3107288/">The Flash</a>
                 <a class="movie-card" href="https://www.imdb.com/title/tt4574334/">Arrow</a>
-
             </div>
         </div>
     </div>
@@ -173,7 +112,7 @@ body.dark .modal-box {
 
             cards.forEach(card => {
                 const text = card.textContent.toLowerCase();
-                card.style.display = text.includes(input) ? "flex" : "none";
+                card.style.display = text.includes(input) ? "block" : "none";
             });
         }
     </script>

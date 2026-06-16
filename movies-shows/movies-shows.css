@@ -1,83 +1,57 @@
-body {
-    background: #0a0a0a;
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
 }
 
 /* SIDEBAR */
 #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
     width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
-    background: #1a1a1a;
-    padding: 20px 0;
+    background-color: #2c3e50;
+    padding: 20px;
     overflow-y: auto;
     transition: transform 0.3s ease;
     z-index: 800;
 }
 
 #sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style-type: none;
 }
 
 #sidebar li {
-    padding: 0;
-    margin: 0;
+    margin-bottom: 15px;
 }
 
 #sidebar a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
+    color: #ecf0f1;
     text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
     transition: background 0.3s;
-    border-left: 4px solid transparent;
 }
 
-#sidebar a:hover {
-    background: #2a2a2a;
-}
-
+#sidebar a:hover,
 #sidebar a.active {
-    background: #3498db;
-    border-left-color: #3498db;
-}
-
-#sidebar.closed {
-    transform: translateX(-250px);
-}
-
-/* TOGGLE BUTTONS */
-#menuToggle, #darkToggle {
-    position: fixed;
-    top: 20px;
-    z-index: 850;
-    background: #3498db;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-#menuToggle {
-    left: 20px;
-}
-
-#darkToggle {
-    right: 20px;
+    background-color: #34495e;
+    border-left: 4px solid #3498db;
 }
 
 /* MAIN CONTENT */
 #movies-content {
     margin-left: 250px;
+    padding: 40px;
+    width: calc(100% - 250px);
     transition: margin-left 0.3s ease;
 }
 
@@ -85,90 +59,168 @@ body {
     margin-left: 0;
 }
 
-/* HOME BUTTON */
-.home-button {
-    display: inline-block;
-    margin: 20px;
-    padding: 12px 20px;
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* SWITCH BUTTON */
-.switch-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #3498db;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
-
 /* SEARCH BAR */
 #searchBar {
-    width: 80%;
-    max-width: 400px;
-    display: block;
-    margin: 80px auto 20px auto;
+    width: 100%;
     padding: 12px 15px;
     font-size: 18px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 
 /* MOVIE/SHOW CARDS */
 .movies-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 0;
 }
 
 .movie-card {
-    width: 200px;
-    height: 250px;
-    background: #e74c3c;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
+    display: block;
+    width: 100%;
+    background-color: #3498db;
     color: white;
+    border: none;
+    padding: 20px;
+    margin: 0;
+    margin-bottom: 15px;
     font-size: 18px;
-    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .movie-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    background-color: #2980b9;
 }
 
 /* DARK MODE */
 body.dark {
-    background: #111;
+    background-color: #1e1e1e;
+    color: white;
 }
 
 body.dark #sidebar {
-    background: #0a0a0a;
+    background-color: #111;
 }
 
-body.dark #sidebar a:hover {
-    background: #1a1a1a;
+body.dark .movie-card {
+    background-color: #555;
+}
+
+body.dark .movie-card:hover {
+    background-color: #666;
+}
+
+/* SIDEBAR ANIMATION */
+#sidebar {
+    transition: transform 0.3s ease;
+}
+
+#sidebar.closed {
+    transform: translateX(-260px);
+}
+
+/* TOGGLE BUTTONS */
+#darkToggle, #menuToggle {
+    position: fixed;
+    top: 15px;
+    padding: 10px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#darkToggle {
+    right: 15px;
+}
+
+#menuToggle {
+    left: 15px;
+}
+
+/* MODAL STYLES */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 900;
+}
+
+.modal-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #3498db;
+    padding: 25px;
+    width: 350px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.ok-btn {
+    background: #2ecc71;
+}
+
+.ok-btn:hover {
+    background: #27ae60;
+}
+
+body.dark .modal-box {
+    background: #0d3c85;
+    color: white;
+}
+
+/* HEADINGS */
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* SWITCH BUTTON (for movies/shows toggle) */
+.switch-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    transition: background 0.2s;
+    position: static;
+}
+
+.switch-button:hover {
+    background-color: #2980b9;
 }
