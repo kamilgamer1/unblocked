@@ -29,7 +29,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #2f6be0; /* MATCHES YOUR BLUE THEME */
+    background: #3498db; /* MATCHES YOUR BLUE THEME */
     padding: 25px;
     width: 350px;
     border-radius: 10px;
@@ -42,7 +42,7 @@
 /* BUTTONS */
 .modal-btn {
     padding: 10px 20px;
-    background: #2f6be0; /* darker blue */
+    background: #3498db; /* darker blue */
     color: white;
     border: none;
     border-radius: 6px;
@@ -63,66 +63,87 @@ body.dark .modal-box {
     color: white;
 }
 </style>
-    <!-- MODAL BACKDROP -->
-<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
 
-<!-- MODAL BOX -->
-<div id="modalBox" class="modal-box">
-    <h2 id="modalTitle">!!NOTICE!!</h2>
-    <p id="modalMessage">I do not claim to own any of these movies, and these are NOT PIRATED. *use at your own risk*</p>
+    <!-- TOGGLE BUTTONS -->
+    <button id="menuToggle" onclick="toggleSidebar()">☰</button>
+    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
 
-    <div class="modal-buttons">
-        <button class="modal-btn" onclick="closeModal()">Close</button>
-        <button class="modal-btn ok-btn" id="okButton">OK</button>
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <ul>
+            <li><a href="/blank-repo-start-from-scratch/index.html">Home</a></li>
+            <li><a href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
+            <li><a class="active" href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
+            <li><a href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
+            <li><a href="/blank-repo-start-from-scratch/music/music.html">Music</a></li>
+            <li><a href="/blank-repo-start-from-scratch/about-us/about-us.html">About Us</a></li>
+        </ul>
     </div>
-</div>
-    <!-- HOME BUTTON -->
-    <a href="/Hikidsmmmm.github.io/index.html" class="home-button">🏠 Home</a>
 
-    <!-- SWITCH BUTTON -->
-    <a class="switch-button" id="switchBtn" onclick="toggleSections()">Shows</a>
+    <!-- MODAL BACKDROP -->
+    <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()"></div>
 
-    <!-- SEARCH BAR -->
-    <input type="text" id="searchBar" placeholder="Search..." onkeyup="filterCards()">
+    <!-- MODAL BOX -->
+    <div id="modalBox" class="modal-box">
+        <h2 id="modalTitle">!!NOTICE!!</h2>
+        <p id="modalMessage">I do not claim to own any of these movies, and these are NOT PIRATED. *use at your own risk*</p>
 
-    <!-- MOVIES SECTION -->
-    <div id="movies-section">
-        <h1 style="text-align:center;">Movies</h1>
-
-        <div class="movies-container">
-
-            <a class="movie-card" href="https://drive.google.com/file/d/1_qJqk2Ss1f45puz3xGQcdD1NxM3ipupj/view">Ant-Man</a>
-            <a class="movie-card" href="https://loadedfiles.org/c9755193327a6e42?pt=SHV5cGlPUXhYRXpjUHplSUhOYjF0M0ZQY210aWRYRktaVEp5UzBodlptNDNSa0ZvWjJjOVBRPT0%3D">The Amazing Spider-Man 2</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1_g_fq1MEbqXuapY_dxXSdohAx8zmxwOX/view">Batman The Dark Knight</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1AstKQ5KLX94k7RFIlsu2St9um8sS_w_M/view">Ant Man And The Wasp</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1u5u_-G0KReiP4Q4eHvx7qwb4jv6ZARdh/view">Shazam</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/0B-uFeCO4yCFIZXNnLUg3cVdiU3M/view?t=8&resourcekey=0-s1hwC6vvc_w-Q2CRrpP08g">Guardians Of The Galaxy Vol.2</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/0BxvqXivT-hg5d2VmZDdsNlBNUzQ/view?resourcekey=0-QWd9FlwAU9FUyU3Ejx_Cqw">X-Men Origins : Wolverine</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/0BzeqnwcztH5cRERqUGl6TFkyc3M/view?resourcekey=0--S8rnshNZ6cP5uYrkFu3WA">Wolverine</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1X9Kflcg0LuRjceV6JghCzs49px8cRTIk/view">John Wick : Chapter 1</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1gzsZEVTNEb93tSa0nuzlpR2n20D4Dyx9/view">John Wick : Chapter 2</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1CsIZrKGXn557DdOJrdz5ty7nkg0i4CWR/view">John Wick : Chapter 3</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/16tKuEYtxi7EeKtX3yZZR-nXgZ_oGTxXS/view">Avatar</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1Mva-frIx-PjwLfoV08BxlwQ44glMzBnZ/view">65</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1lKwqLzxgLyJi0BhN9Lc8HdHMM7LMVb5V/view">Men In Black</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/1YPdexiO1cHulGguqGvHKq0Grsnpdlbs1/view">Top Gun</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
-            <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
-
+        <div class="modal-buttons">
+            <button class="modal-btn" onclick="closeModal()">Close</button>
+            <button class="modal-btn ok-btn" id="okButton">OK</button>
         </div>
     </div>
 
-    <!-- SHOWS SECTION -->
-    <div id="shows-section" style="display:none;">
-        <h1 style="text-align:center;">Shows</h1>
+    <!-- MAIN CONTENT -->
+    <div id="movies-content">
+        <!-- HOME BUTTON -->
+        <a href="/Hikidsmmmm.github.io/index.html" class="home-button">🏠 Home</a>
 
-        <div class="movies-container">
+        <!-- SWITCH BUTTON -->
+        <a class="switch-button" id="switchBtn" onclick="toggleSections()">Shows</a>
 
-            <a class="movie-card" href="https://www.netflix.com/title/80057281">Stranger Things</a>
-            <a class="movie-card" href="https://www.imdb.com/title/tt3107288/">The Flash</a>
-            <a class="movie-card" href="https://www.imdb.com/title/tt4574334/">Arrow</a>
+        <!-- SEARCH BAR -->
+        <input type="text" id="searchBar" placeholder="Search..." onkeyup="filterCards()">
 
+        <!-- MOVIES SECTION -->
+        <div id="movies-section">
+            <h1 style="text-align:center;">Movies</h1>
+
+            <div class="movies-container">
+
+                <a class="movie-card" href="https://drive.google.com/file/d/1_qJqk2Ss1f45puz3xGQcdD1NxM3ipupj/view">Ant-Man</a>
+                <a class="movie-card" href="https://loadedfiles.org/c9755193327a6e42?pt=SHV5cGlPUXhYRXpjUHplSUhOYjF0M0ZQY210aWRYRktaVEp5UzBodlptNDNSa0ZvWjJjOVBRPT0%3D">The Amazing Spider-Man 2</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1_g_fq1MEbqXuapY_dxXSdohAx8zmxwOX/view">Batman The Dark Knight</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1AstKQ5KLX94k7RFIlsu2St9um8sS_w_M/view">Ant Man And The Wasp</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1u5u_-G0KReiP4Q4eHvx7qwb4jv6ZARdh/view">Shazam</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/0B-uFeCO4yCFIZXNnLUg3cVdiU3M/view?t=8&resourcekey=0-s1hwC6vvc_w-Q2CRrpP08g">Guardians Of The Galaxy Vol.2</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/0BxvqXivT-hg5d2VmZDdsNlBNUzQ/view?resourcekey=0-QWd9FlwAU9FUyU3Ejx_Cqw">X-Men Origins : Wolverine</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/0BzeqnwcztH5cRERqUGl6TFkyc3M/view?resourcekey=0--S8rnshNZ6cP5uYrkFu3WA">Wolverine</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1X9Kflcg0LuRjceV6JghCzs49px8cRTIk/view">John Wick : Chapter 1</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1gzsZEVTNEb93tSa0nuzlpR2n20D4Dyx9/view">John Wick : Chapter 2</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1CsIZrKGXn557DdOJrdz5ty7nkg0i4CWR/view">John Wick : Chapter 3</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/16tKuEYtxi7EeKtX3yZZR-nXgZ_oGTxXS/view">Avatar</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1Mva-frIx-PjwLfoV08BxlwQ44glMzBnZ/view">65</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1lKwqLzxgLyJi0BhN9Lc8HdHMM7LMVb5V/view">Men In Black</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/1YPdexiO1cHulGguqGvHKq0Grsnpdlbs1/view">Top Gun</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
+                <a class="movie-card" href="https://drive.google.com/file/d/10LUlcX6Hu9pn3c3xmPlfJOf20Qjwgxq_/view">John Wick : Chapter 4</a>
+
+            </div>
+        </div>
+
+        <!-- SHOWS SECTION -->
+        <div id="shows-section" style="display:none;">
+            <h1 style="text-align:center;">Shows</h1>
+
+            <div class="movies-container">
+
+                <a class="movie-card" href="https://www.netflix.com/title/80057281">Stranger Things</a>
+                <a class="movie-card" href="https://www.imdb.com/title/tt3107288/">The Flash</a>
+                <a class="movie-card" href="https://www.imdb.com/title/tt4574334/">Arrow</a>
+
+            </div>
         </div>
     </div>
 
@@ -156,59 +177,63 @@ body.dark .modal-box {
             });
         }
     </script>
+
     <script>
-function openModal(title, message, okAction = null) {
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalMessage").textContent = message;
+    function openModal(title, message, okAction = null) {
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalMessage").textContent = message;
 
-    // Show modal
-    document.getElementById("modalBackdrop").style.display = "block";
-    document.getElementById("modalBox").style.display = "block";
+        document.getElementById("modalBackdrop").style.display = "block";
+        document.getElementById("modalBox").style.display = "block";
 
-    // Set OK button action
-    const okBtn = document.getElementById("okButton");
-    okBtn.onclick = () => {
-        closeModal();
-        if (okAction) okAction();
+        const okBtn = document.getElementById("okButton");
+        okBtn.onclick = () => {
+            closeModal();
+            if (okAction) okAction();
+        };
+    }
+
+    function closeModal() {
+        document.getElementById("modalBackdrop").style.display = "none";
+        document.getElementById("modalBox").style.display = "none";
+    }
+
+    // show modal on page load
+    window.addEventListener("load", () => {
+        openModal(
+            "!!NOTICE!!",
+            "I do not claim to own any of these movies, and these are NOT PIRATED. *use at your own risk*"
+        );
+    });
+
+    // ---------------- DARK MODE ----------------
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark");
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        localStorage.setItem("darkMode",
+            document.body.classList.contains("dark") ? "enabled" : "disabled"
+        );
+    }
+
+    // ---------------- SIDEBAR TOGGLE ----------------
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("closed");
+        localStorage.setItem("sidebarClosed",
+            sidebar.classList.contains("closed")
+        );
+    }
+
+    // Load saved sidebar state
+    window.onload = () => {
+        if (localStorage.getItem("sidebarClosed") === "true") {
+            document.getElementById("sidebar").classList.add("closed");
+        }
     };
-}
-
-function closeModal() {
-    document.getElementById("modalBackdrop").style.display = "none";
-    document.getElementById("modalBox").style.display = "none";
-}
-</script>
-<!-- modal functions -->
-<script>
-function openModal(title, message, okAction = null) {
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalMessage").textContent = message;
-
-    document.getElementById("modalBackdrop").style.display = "block";
-    document.getElementById("modalBox").style.display = "block";
-
-    const okBtn = document.getElementById("okButton");
-    okBtn.onclick = () => {
-        closeModal();
-        if (okAction) okAction();
-    };
-}
-
-function closeModal() {
-    document.getElementById("modalBackdrop").style.display = "none";
-    document.getElementById("modalBox").style.display = "none";
-}
-</script>
-
-<!-- show modal on page load -->
-<script>
-window.addEventListener("load", () => {
-    openModal(
-        "!!NOTICE!!",
-        "I do not claim to own any of these movies, and these are NOT PIRATED. *use at your own risk*"
-    );
-});
-</script>
+    </script>
 
 </body>
 </html>
