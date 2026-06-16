@@ -1,2 +1,2 @@
-<img width="2360" height="1369" alt="IMG_1664" src="https://github.com/user-attachments/assets/8b967cf4-23cf-437d-801e-e9bf5d8f6dce" />
+<img width="2360" height="1369" alt="IMG_2144" src="./images/IMG_2144.jpeg">
 I - kamil - am really trying
