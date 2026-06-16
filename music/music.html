@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music</title>
-
-    <link rel="stylesheet" href="/Hikidsmmmm.github.io/music/music.css">
+    <link rel="stylesheet" href="../music/music.css">
 </head>
 
 <body>
@@ -20,6 +19,108 @@
             <li><a class="active" href="../music/music.html">Music</a></li>
             <li><a href="../about-us/about-us.html">About Us</a></li>
             <li><a href="https://github.com/kamilgamer1/"><img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="50" hight="50"><br></br>Visit my GitHub</a></li>
+            <!-- START OF CLOCK WIDGET BLOCK -->
+<li style="list-style: none; margin-top: 25px; padding: 0 10px;">
+  <div class="clock-card-widget">
+    <div class="clock-location-container">
+      <span class="clock-icon">📍</span>
+      <div class="clock-location-name" id="widget-location">Detecting...</div>
+    </div>
+    <div class="clock-time-display" id="widget-time">00:00:00 AM</div>
+    <div class="clock-date-display" id="widget-date">Loading...</div>
+  </div>
+
+  <style>
+    /* Scoped classes to prevent breaking your existing website layout */
+    .clock-card-widget {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Target specific styles within dark mode if needed */
+    body.dark .clock-card-widget {
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.1);
+    }
+
+    .clock-location-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .clock-icon {
+      font-size: 0.9rem;
+    }
+
+    .clock-location-name {
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .clock-time-display {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .clock-date-display {
+      color: #3b82f6;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  </style>
+
+  <script>
+    (function() {
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const cleanLocation = userTimeZone.split('/').pop().replace('_', ' ');
+      document.getElementById('widget-location').textContent = cleanLocation;
+
+      function updateWidgetClock() {
+        const now = new Date();
+        
+        const timeOptions = {
+          timeZone: userTimeZone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        };
+        
+        const dateOptions = {
+          timeZone: userTimeZone,
+          weekday: 'short',
+          month: 'short',
+          day: 'numeric'
+        };
+
+        const timeElement = document.getElementById('widget-time');
+        const dateElement = document.getElementById('widget-date');
+
+        if(timeElement) timeElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
+        if(dateElement) dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
+      }
+
+      updateWidgetClock();
+      setInterval(updateWidgetClock, 1000);
+    })();
+  </script>
+</li>
+<!-- END OF CLOCK WIDGET BLOCK -->
+
         </ul>
     </div>
 
