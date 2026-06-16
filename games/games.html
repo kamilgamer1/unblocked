@@ -5,62 +5,79 @@
   <link rel="stylesheet" href="games.css">
 </head>
 <body>
-<button id="menuToggle" onclick="toggleSidebar()">☰</button>
-<button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
-<h1>Games</h1>
-<h1>(Not alot works because of IT, will work at beggining of next year)<br><a href="../movies-shows/movies-shows.html">Visit Movies / shows?.</a></h1>
-<div class="games-grid">
-  <a href="/Hikidsmmmm.github.io/index.html" class="game-card">
-    <img src="/blank-repo-start-from-scratch/images/home.jpg" class="game-icon" alt="Home">
-    <div class="game-title">Home</div>
-  </a>
-  <a href="/Hikidsmmmm.github.io/games/3dash.html" class="game-card">
-    <img src="../images/3dash.png" class="game-icon" alt="3D Dash">
-    <div class="game-title">3Dash</div>
-  </a>
-  <!-- Example Game 2 -->
-  <a href="slope/index.html" class="game-card">
-    <img src="../icons/slope.png" class="game-icon" alt="Slope">
-    <div class="game-title">Slope</div>
-  </a>
-  <!-- Example Game 3 -->
-  <a href="https://hikidsmmmm.github.io/Polytrack-0.6.0/" class="game-card">
-    <img src="https://github.com/Hikidsmmmm/Polytrack-0.6.0/blob/main/images/car_thumbnail_placeholder.png" class="game-icon" alt="Polytrack">
-    <div class="game-title">Polytrack (Newest)</div>
-  </a>
-  <a href="./more-games.html" class="game-card">
-    <img src="" class="game-icon" alt="More Games">
-    <div class="game-title">More Games</div>
-  </a>
-</div>
-<script>
-// ---------------- DARK MODE ----------------
-if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark");
-}
+  <button id="menuToggle" onclick="toggleSidebar()">☰</button>
+  <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("darkMode",
-        document.body.classList.contains("dark") ? "enabled" : "disabled"
-    );
-}
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <ul>
+      <li><a href="/blank-repo-start-from-scratch/index.html">Home</a></li>
+      <li><a class="active" href="/blank-repo-start-from-scratch/games/games.html">Games</a></li>
+      <li><a href="/blank-repo-start-from-scratch/movies-shows/movies-shows.html">Movies / Shows</a></li>
+      <li><a href="/blank-repo-start-from-scratch/websites/websites.html">Websites</a></li>
+      <li><a href="/blank-repo-start-from-scratch/music/music.html">Music</a></li>
+      <li><a href="/blank-repo-start-from-scratch/about-us/about-us.html">About Us</a></li>
+    </ul>
+  </div>
 
-// ---------------- SIDEBAR TOGGLE ----------------
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("closed");
-    localStorage.setItem("sidebarClosed",
-        sidebar.classList.contains("closed")
-    );
-}
+  <!-- MAIN CONTENT -->
+  <div id="games-content">
+    <h1>Games</h1>
+    <h1>(Not alot works because of IT, will work at beggining of next year)<br><a href="../movies-shows/movies-shows.html">Visit Movies / shows?.</a></h1>
+    <div class="games-grid">
+      <a href="/Hikidsmmmm.github.io/index.html" class="game-card">
+        <img src="/blank-repo-start-from-scratch/images/home.jpg" class="game-icon" alt="Home">
+        <div class="game-title">Home</div>
+      </a>
+      <a href="/Hikidsmmmm.github.io/games/3dash.html" class="game-card">
+        <img src="../images/3dash.png" class="game-icon" alt="3D Dash">
+        <div class="game-title">3Dash</div>
+      </a>
+      <!-- Example Game 2 -->
+      <a href="slope/index.html" class="game-card">
+        <img src="../icons/slope.png" class="game-icon" alt="Slope">
+        <div class="game-title">Slope</div>
+      </a>
+      <!-- Example Game 3 -->
+      <a href="https://hikidsmmmm.github.io/Polytrack-0.6.0/" class="game-card">
+        <img src="https://github.com/Hikidsmmmm/Polytrack-0.6.0/blob/main/images/car_thumbnail_placeholder.png" class="game-icon" alt="Polytrack">
+        <div class="game-title">Polytrack (Newest)</div>
+      </a>
+      <a href="./more-games.html" class="game-card">
+        <img src="" class="game-icon" alt="More Games">
+        <div class="game-title">More Games</div>
+      </a>
+    </div>
+  </div>
 
-// Load saved sidebar state
-window.onload = () => {
-    if (localStorage.getItem("sidebarClosed") === "true") {
-        document.getElementById("sidebar").classList.add("closed");
-    }
-};
-</script>
+  <script>
+  // ---------------- DARK MODE ----------------
+  if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+  }
+
+  function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode",
+          document.body.classList.contains("dark") ? "enabled" : "disabled"
+      );
+  }
+
+  // ---------------- SIDEBAR TOGGLE ----------------
+  function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("closed");
+      localStorage.setItem("sidebarClosed",
+          sidebar.classList.contains("closed")
+      );
+  }
+
+  // Load saved sidebar state
+  window.onload = () => {
+      if (localStorage.getItem("sidebarClosed") === "true") {
+          document.getElementById("sidebar").classList.add("closed");
+      }
+  };
+  </script>
 </body>
 </html>
