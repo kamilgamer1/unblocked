@@ -1,133 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        /* SIDEBAR */
-        #sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            background-color: #2c3e50;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        #sidebar.closed {
-            transform: translateX(-260px);
-        }
-
-        #sidebar ul {
-            list-style-type: none;
-        }
-
-        #sidebar li {
-            margin-bottom: 15px;
-        }
-
-        #sidebar a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        #sidebar a:hover,
-        #sidebar a.active {
-            background-color: #34495e;
-            border-left: 4px solid #3498db;
-        }
-
-        /* MAIN CONTENT */
-        #about-us {
-            margin-left: 250px;
-            padding: 40px;
-            width: calc(100% - 250px);
-        }
-
-        h1 a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        h1 a:hover {
-            text-decoration: underline;
-        }
-
-        /* TOGGLE BUTTONS */
-        #menuToggle, #darkToggle {
-            position: fixed;
-            top: 15px;
-            padding: 10px 15px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        #menuToggle {
-            left: 15px;
-        }
-
-        #darkToggle {
-            right: 15px;
-        }
-
-        /* DARK MODE */
-        body.dark {
-            background-color: #1e1e1e;
-            color: white;
-        }
-
-        body.dark #sidebar {
-            background-color: #111;
-        }
-
-        body.dark h1 a {
-            color: #4aa3ff;
-        }
-    </style>
+  <title>Games</title>
+  <link rel="stylesheet" href="./games.css">
 </head>
-
 <body>
+  <button id="menuToggle" onclick="toggleSidebar()">☰</button>
+  <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
 
-    <!-- TOGGLE BUTTONS -->
-    <button id="menuToggle" onclick="toggleSidebar()">☰</button>
-    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
-
-    <!-- SIDEBAR -->
-    <div id="sidebar">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../games/games.html">Games</a></li>
-            <li><a href="../movies-shows/movies-shows.html">Movies / Shows</a></li>
-            <li><a href="../websites/websites.html">Websites</a></li>
-            <li><a href="../music/music.html">Music</a></li>
-            <li><a class="active" href="../about-us/about-us.html">About Us</a></li>
-            <li><a href="https://github.com/kamilgamer1/"><img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="50" hight="50"><br></br>Visit my GitHub</a></li>
-            <!-- START OF CLOCK WIDGET BLOCK -->
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a class="active" href="../games/games.html">Games</a></li>
+      <li><a href="../movies-shows/movies-shows.html">Movies / Shows</a></li>
+      <li><a href="../websites/websites.html">Websites</a></li>
+      <li><a href="https://open.spotify.com/">Music</a></li>
+      <li><a href="../about-us/about-us.html">About Us</a></li>
+      <li><a href="https://github.com/Kamilgamer1/"><img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="50" hight="50"><br></br>Visit my GitHub</a></li>
+      <!--Clock-->
 <li style="list-style: none; margin-top: 25px; padding: 0 10px;">
   <div class="clock-card-widget">
     <div class="clock-location-container">
@@ -180,107 +71,3 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      margin-bottom: 4px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .clock-date-display {
-      color: #3b82f6;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-  </style>
-
-  <script>
-    (function() {
-      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      const cleanLocation = userTimeZone.split('/').pop().replace('_', ' ');
-      document.getElementById('widget-location').textContent = cleanLocation;
-
-      function updateWidgetClock() {
-        const now = new Date();
-        
-        const timeOptions = {
-          timeZone: userTimeZone,
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: true
-        };
-        
-        const dateOptions = {
-          timeZone: userTimeZone,
-          weekday: 'short',
-          month: 'short',
-          day: 'numeric'
-        };
-
-        const timeElement = document.getElementById('widget-time');
-        const dateElement = document.getElementById('widget-date');
-
-        if(timeElement) timeElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
-        if(dateElement) dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
-      }
-
-      updateWidgetClock();
-      setInterval(updateWidgetClock, 1000);
-    })();
-  </script>
-</li>
-<!-- END OF CLOCK WIDGET BLOCK -->
-
-        </ul>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="about-us">
-      <h1>We : just a bored group of 6th graders, (for now), Me : I am the leader (Kamil) and i basically coded this whole website.</h1>
-        <h1>I also really like,<br></br>
-          <ul>
-            <li>Soccer⚽️</li>
-            <li>Engineering🔧</li>
-            <li>Gaming🎮</li>
-            <li>And obviously... CODING🔤</li>
-          </ul>
-        </h1><br></br>
-        <h1>I know... HTML, (some) CSS, and i'm learning JavaScript!
-            <a href="/blank-repo-start-from-scratch/about-us/advertise.html">
-                Advertise here!
-            </a>
-        </h1>
-
-    </div>
-
-    <!-- GLOBAL JAVASCRIPT -->
-    <script>
-        // ---------------- DARK MODE ----------------
-        if (localStorage.getItem("darkMode") === "enabled") {
-            document.body.classList.add("dark");
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark");
-            localStorage.setItem("darkMode",
-                document.body.classList.contains("dark") ? "enabled" : "disabled"
-            );
-        }
-
-        // ---------------- SIDEBAR TOGGLE ----------------
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("closed");
-            localStorage.setItem("sidebarClosed",
-                sidebar.classList.contains("closed")
-            );
-        }
-
-        // Load saved sidebar state
-        window.onload = () => {
-            if (localStorage.getItem("sidebarClosed") === "true") {
-                document.getElementById("sidebar").classList.add("closed");
-            }
-        };
-    </script>
-
-</body>
-</html>

@@ -1,26 +1,25 @@
-<!--i suck - kamil.k-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-4549210534275083">
-    <link rel="stylesheet" href="./style.css">
-    <title>Welcome</title>
-  </head>
-  <body>
-    <button id="menuToggle" onclick="toggleSidebar()">☰</button>
-    <button id="darkToggle" onclick="toggleDarkMode()">🌙</button>
+    <title>Music</title>
+    <link rel="stylesheet" href="../music/music.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
     <div id="sidebar">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./games/games.html">Games</a></li>
-        <li><a href="./movies-shows/movies-shows.html">Movies / Shows</a></li>
-        <li><a href="./websites/websites.html">Websites</a></li>
-        <li><a href="./music/music.html">Music</a></li>
-        <li><a href="./about-us/about-us.html">About Us</a></li>
-        <li><a href="https://github.com/Kamilgamer1/"><img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="50" hight="50"><br></br>Visit my GitHub</a></li>
-        <!--Clock-->
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../games/games.html">Games</a></li>
+            <li><a href="../movies-shows/movies-shows.html">Movies / Shows</a></li>
+            <li><a href="../websites/websites.html">Websites</a></li>
+            <li><a class="active" href="../music/music.html">Music</a></li>
+            <li><a href="../about-us/about-us.html">About Us</a></li>
+            <li><a href="https://github.com/kamilgamer1/"><img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="50" hight="50"><br></br>Visit my GitHub</a></li>
+            <!-- START OF CLOCK WIDGET BLOCK -->
 <li style="list-style: none; margin-top: 25px; padding: 0 10px;">
   <div class="clock-card-widget">
     <div class="clock-location-container">
@@ -73,105 +72,3 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      margin-bottom: 4px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .clock-date-display {
-      color: #3b82f6;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-  </style>
-
-  <script>
-    (function() {
-      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      const cleanLocation = userTimeZone.split('/').pop().replace('_', ' ');
-      document.getElementById('widget-location').textContent = cleanLocation;
-
-      function updateWidgetClock() {
-        const now = new Date();
-        
-        const timeOptions = {
-          timeZone: userTimeZone,
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: true
-        };
-        
-        const dateOptions = {
-          timeZone: userTimeZone,
-          weekday: 'short',
-          month: 'short',
-          day: 'numeric'
-        };
-
-        const timeElement = document.getElementById('widget-time');
-        const dateElement = document.getElementById('widget-date');
-
-        if(timeElement) timeElement.textContent = now.toLocaleTimeString('en-US', timeOptions);
-        if(dateElement) dateElement.textContent = now.toLocaleDateString('en-US', dateOptions);
-      }
-
-      updateWidgetClock();
-      setInterval(updateWidgetClock, 1000);
-    })();
-  </script>
-</li>
-      </ul>
-    </div>
-    <div id="Home">
-      <h1>Welcome to My/Kamils website.</h1><br></br>
-      <h1><strong>!!THIS WEBSITE IS UNDER DEVELOPMENT!!<br></br>(updates will occur)</strong></h1><br></br>
-      <a href="./games/games.html">
-        <button type="button" id="games-button">Games</button>
-      </a>
-      <a href="./movies-shows/movies-shows.html">
-        <button type="button" id="movies-button">Movies / Shows</button>
-      </a>
-      <a href="./websites/websites.html">
-        <button type="button" id="websites-button">Websites</button>
-      </a>
-      <a href="./about-us/about-us.html">
-        <button type="button" id="about-button">About us</button>
-      </a>
-      <a href="./music/music.html">
-        <button type="button" id="music-button">Music</button>
-      </a>
-    </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4549210534275083"
-     crossorigin="anonymous"></script>
- <script>
-// ---------------- DARK MODE ----------------
- if (localStorage.getItem("darkMode") === "enabled") {
-     document.body.classList.add("dark");
- }
-
- function toggleDarkMode() {
-     document.body.classList.toggle("dark");
-     localStorage.setItem("darkMode",
-         document.body.classList.contains("dark") ? "enabled" : "disabled"
-     );
- }
-
-// ---------------- SIDEBAR TOGGLE ----------------
- function toggleSidebar() {
-     const sidebar = document.getElementById("sidebar");
-     sidebar.classList.toggle("closed");
-     localStorage.setItem("sidebarClosed",
-         sidebar.classList.contains("closed")
-     );
- }
-
- // Load saved sidebar state
- window.onload = () => {
-     if (localStorage.getItem("sidebarClosed") === "true") {
-         document.getElementById("sidebar").classList.add("closed");
-     }
- };
- </script>
-    </div>
-  </body>
-</html>
