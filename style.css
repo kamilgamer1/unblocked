@@ -9,39 +9,42 @@ body {
   background-color: #f8f9fa;
 }
 
-/* Locks sidebar to the left side of the window */
+/* SIDEBAR */
 #sidebar {
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: #2c3e50;
-  padding: 20px;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #2c3e50;
+    padding: 20px;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 800;
 }
 
 #sidebar ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 #sidebar li {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 #sidebar a {
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 18px;
-  display: block;
-  padding: 10px;
-  border-radius: 4px;
-  transition: background 0.3s;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
-/* Hover look and Current active tab look */
-#sidebar a:hover, #sidebar a.active {
-  background-color: #34495e;
-  border-left: 4px solid #3498db;
+#sidebar a:hover,
+#sidebar a.active {
+    background-color: #34495e;
+    border-left: 4px solid #3498db;
 }
 
 /* Pushes main content right so it doesn't hide behind the fixed sidebar */
