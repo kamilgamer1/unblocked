@@ -143,6 +143,8 @@ body.dark .website-btn {
   width: 200px;
   height: 100px;
   background-color: #3498db;
-  align: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
   border-radius: 5px;
 }
