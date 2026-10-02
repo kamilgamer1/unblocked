@@ -137,3 +137,12 @@ body.dark .website-btn {
 #menuToggle {
   left: 15px;
 }
+
+
+#game-recomendations {
+  width: 200px;
+  height: 100px;
+  background-color: #3498db;
+  text-align: center;
+  border-radius: 5px;
+}
